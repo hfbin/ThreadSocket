@@ -23,7 +23,7 @@ public class Client {
 		 .handler(new ChannelInitializer<SocketChannel>() {
 			@Override
 			protected void initChannel(SocketChannel sc) throws Exception {
-				sc.pipeline().addLast(new FixedLengthFrameDecoder(5));
+				sc.pipeline().addLast(new FixedLengthFrameDecoder(3));
 				sc.pipeline().addLast(new StringDecoder());
 				sc.pipeline().addLast(new ClientHandler());
 			}

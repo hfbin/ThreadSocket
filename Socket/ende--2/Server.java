@@ -29,7 +29,7 @@ public class Server {
 			@Override
 			protected void initChannel(SocketChannel sc) throws Exception {
 				//设置定长字符串接收
-				sc.pipeline().addLast(new FixedLengthFrameDecoder(5));
+				sc.pipeline().addLast(new FixedLengthFrameDecoder(3));
 				//设置字符串形式的解码
 				sc.pipeline().addLast(new StringDecoder());
 				sc.pipeline().addLast(new ServerHandler());
